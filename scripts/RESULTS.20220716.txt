@@ -1,0 +1,318 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+                                                                                                                        Try the new cross-platform PowerShell https://aka.ms/pscore6                                                                                                                                                                                    PS C:\WINDOWS\system32> Get-AppxPackage *Microsoft.YourPhone* -AllUsers | Remove-AppxPackage                            PS C:\WINDOWS\system32> Get-AppxPackage *Microsoft.YourPhone*
+PS C:\WINDOWS\system32> Get-AppxPackage *Microsoft.YourPhone*
+PS C:\WINDOWS\system32> Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
+PS C:\WINDOWS\system32> Get-AppxPackage -AllUsers Microsoft.549981C3F5F10 | Remove-AppPackage
+PS C:\WINDOWS\system32> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+PS C:\WINDOWS\system32> cd C:\Work\Tools\10\Debloat-Windows-10-master\scripts
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> ls -Recurse *.ps*1 | Unblock-File
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> get-history >C:\temp\commands.log
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> Set-ExecutionPolicy Unrestricted -Scope CurrentUser >> c:\temp\commands.log
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\block-telemetry.ps1
+Disabling telemetry via Group Policies
+Adding telemetry domains to hosts file
+Out-File : The process cannot access the file 'C:\WINDOWS\System32\drivers\etc\hosts' because it is being used by
+another process.
+At C:\Work\Tools\10\Debloat-Windows-10-master\scripts\block-telemetry.ps1:202 char:42
++ ... tput "0.0.0.0 $domain" | Out-File -Encoding ASCII -Append $hosts_file
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+Adding telemetry ips to firewall
+
+
+Name                  : {9df6fcfb-4021-46f7-9014-b1c5e72db020}
+DisplayName           : Block Telemetry IPs
+Description           :
+DisplayGroup          :
+Group                 :
+Enabled               : True
+Profile               : Any
+Platform              : {}
+Direction             : Outbound
+Action                : Block
+EdgeTraversalPolicy   : Block
+LooseSourceMapping    : False
+LocalOnlyMapping      : False
+Owner                 :
+PrimaryStatus         : OK
+Status                : The rule was parsed successfully from the store. (65536)
+EnforcementStatus     : NotApplicable
+PolicyStoreSource     : PersistentStore
+PolicyStoreSourceType : Local
+
+
+
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\disable-services.ps
+.\disable-services.ps : The term '.\disable-services.ps' is not recognized as the name of a cmdlet, function, script
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct
+and try again.
+At line:1 char:1
++ .\disable-services.ps
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\disable-services.ps:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\disable-services.ps
+.\disable-services.ps : The term '.\disable-services.ps' is not recognized as the name of a cmdlet, function, script
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct
+and try again.
+At line:1 char:1
++ .\disable-services.ps
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\disable-services.ps:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\disable-services.ps1
+Trying to disable diagnosticshub.standardcollector.service
+Trying to disable DiagTrack
+Trying to disable dmwappushservice
+Trying to disable lfsvc
+Trying to disable MapsBroker
+Trying to disable NetTcpPortSharing
+Trying to disable RemoteAccess
+Trying to disable RemoteRegistry
+Trying to disable SharedAccess
+Trying to disable TrkWks
+Trying to disable WbioSrvc
+Trying to disable WMPNetworkSvc
+Trying to disable XblAuthManager
+Trying to disable XblGameSave
+Trying to disable XboxNetApiSvc
+Trying to disable ndu
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\fix-privacy-settings.ps1
+Elevating priviledges for this process
+Defuse Windows search settings
+Set-WindowsSearchSetting : The term 'Set-WindowsSearchSetting' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is
+correct and try again.
+At C:\Work\Tools\10\Debloat-Windows-10-master\scripts\fix-privacy-settings.ps1:12 char:1
++ Set-WindowsSearchSetting -EnableWebResultsSetting $false
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set-WindowsSearchSetting:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Set general privacy options
+Disable synchronisation of settings
+Set privacy policy accepted state to 0
+Do not scan contact informations
+Inking and typing settings
+Microsoft Edge settings
+Disable background access of default apps
+Denying device access
+Disable location sensor
+Disable submission of Windows Defender findings (w/ elevated privileges)
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:24 char:5
++     $acl = $key.GetAccessControl()
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:25 char:5
++     $acl.SetOwner($admins)
++     ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:26 char:5
++     $key.SetAccessControl($acl)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:29 char:5
++     $acl = $key.GetAccessControl()
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:31 char:5
++     $acl.SetAccessRule($rule)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+You cannot call a method on a null-valued expression.
+At C:\Work\Tools\10\Debloat-Windows-10-master\lib\take-own.psm1:32 char:5
++     $key.SetAccessControl($acl)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+Set-ItemProperty : Cannot find path 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Spynet' because it does not exist.
+At C:\Work\Tools\10\Debloat-Windows-10-master\scripts\fix-privacy-settings.ps1:103 char:1
++ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Defender\Spy ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (HKLM:\SOFTWARE\...Defender\Spynet:String) [Set-ItemProperty], ItemNotFo
+   undException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetItemPropertyCommand
+
+Set-ItemProperty : Cannot find path 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Spynet' because it does not exist.
+At C:\Work\Tools\10\Debloat-Windows-10-master\scripts\fix-privacy-settings.ps1:104 char:1
++ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Defender\Spy ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (HKLM:\SOFTWARE\...Defender\Spynet:String) [Set-ItemProperty], ItemNotFo
+   undException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetItemPropertyCommand
+
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> .\remove-default-apps.ps1
+Elevating privileges for this process
+Uninstalling default apps
+Trying to remove Microsoft.549981C3F5F10
+Trying to remove Microsoft.3DBuilder
+Trying to remove Microsoft.Appconnector
+Trying to remove Microsoft.BingFinance
+Trying to remove Microsoft.BingNews
+Trying to remove Microsoft.BingSports
+Trying to remove Microsoft.BingTranslator
+Trying to remove Microsoft.BingWeather
+Trying to remove Microsoft.GamingServices
+Trying to remove Microsoft.MicrosoftOfficeHub
+Trying to remove Microsoft.MicrosoftPowerBIForWindows
+Trying to remove Microsoft.MicrosoftSolitaireCollection
+Trying to remove Microsoft.MinecraftUWP
+Trying to remove Microsoft.NetworkSpeedTest
+Trying to remove Microsoft.People
+Trying to remove Microsoft.Print3D
+Trying to remove Microsoft.SkypeApp
+Trying to remove Microsoft.Wallet
+Trying to remove Microsoft.WindowsAlarms
+Trying to remove Microsoft.WindowsCamera
+
+
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove microsoft.windowscommunicationsapps
+Trying to remove Microsoft.WindowsMaps
+Trying to remove Microsoft.WindowsPhone
+Trying to remove Microsoft.WindowsSoundRecorder
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove Microsoft.Xbox.TCUI
+Trying to remove Microsoft.XboxApp
+Trying to remove Microsoft.XboxGameOverlay
+Trying to remove Microsoft.XboxSpeechToTextOverlay
+Trying to remove Microsoft.YourPhone
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove Microsoft.ZuneMusic
+Trying to remove Microsoft.ZuneVideo
+Trying to remove Microsoft.CommsPhone
+Trying to remove Microsoft.ConnectivityStore
+Trying to remove Microsoft.GetHelp
+Trying to remove Microsoft.Getstarted
+Trying to remove Microsoft.Messaging
+Trying to remove Microsoft.Office.Sway
+Trying to remove Microsoft.OneConnect
+Trying to remove Microsoft.WindowsFeedbackHub
+Trying to remove Microsoft.Microsoft3DViewer
+Trying to remove Microsoft.BingFoodAndDrink
+Trying to remove Microsoft.BingHealthAndFitness
+Trying to remove Microsoft.BingTravel
+Trying to remove Microsoft.WindowsReadingList
+Trying to remove Microsoft.MixedReality.Portal
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove Microsoft.ScreenSketch
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove Microsoft.XboxGamingOverlay
+Path          :
+Online        : True
+RestartNeeded : False
+
+Trying to remove 2FE3CB00.PicsArt-PhotoStudio
+Trying to remove 46928bounde.EclipseManager
+Trying to remove 4DF9E0F8.Netflix
+Trying to remove 613EBCEA.PolarrPhotoEditorAcademicEdition
+Trying to remove 6Wunderkinder.Wunderlist
+Trying to remove 7EE7776C.LinkedInforWindows
+Trying to remove 89006A2E.AutodeskSketchBook
+Trying to remove 9E2F88E3.Twitter
+Trying to remove A278AB0D.DisneyMagicKingdoms
+Trying to remove A278AB0D.MarchofEmpires
+Trying to remove ActiproSoftwareLLC.562882FEEB491
+Trying to remove CAF9E577.Plex
+Trying to remove ClearChannelRadioDigital.iHeartRadio
+Trying to remove D52A8D61.FarmVille2CountryEscape
+Trying to remove D5EA27B7.Duolingo-LearnLanguagesforFree
+Trying to remove DB6EA5DB.CyberLinkMediaSuiteEssentials
+Trying to remove DolbyLaboratories.DolbyAccess
+Trying to remove DolbyLaboratories.DolbyAccess
+Trying to remove Drawboard.DrawboardPDF
+Trying to remove Facebook.Facebook
+Trying to remove Fitbit.FitbitCoach
+Trying to remove Flipboard.Flipboard
+Trying to remove GAMELOFTSA.Asphalt8Airborne
+Trying to remove KeeperSecurityInc.Keeper
+Trying to remove NORDCURRENT.COOKINGFEVER
+Trying to remove PandoraMediaInc.29680B314EFC2
+Trying to remove Playtika.CaesarsSlotsFreeCasino
+Trying to remove ShazamEntertainmentLtd.Shazam
+Trying to remove SlingTVLLC.SlingTV
+Trying to remove SpotifyAB.SpotifyMusic
+Trying to remove TheNewYorkTimes.NYTCrossword
+Trying to remove ThumbmunkeysLtd.PhototasticCollage
+Trying to remove TuneIn.TuneInRadio
+Trying to remove WinZipComputing.WinZipUniversal
+Trying to remove XINGAG.XING
+Trying to remove flaregamesGmbH.RoyalRevolt2
+Trying to remove king.com.*
+Trying to remove king.com.BubbleWitch3Saga
+Trying to remove king.com.CandyCrushSaga
+Trying to remove king.com.CandyCrushSodaSaga
+Trying to remove Microsoft.Advertising.Xaml
+
+Property      : {}
+PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
+PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft
+PSChildName   : WindowsStore
+PSDrive       : HKLM
+PSProvider    : Microsoft.PowerShell.Core\Registry
+PSIsContainer : True
+SubKeyCount   : 0
+View          : Default
+Handle        : Microsoft.Win32.SafeHandles.SafeRegistryHandle
+ValueCount    : 0
+Name          : HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
+
+
+
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts> get-history >C:\Work\Tools\10\Debloat-Windows-10-master\scripts\RESULTS.commands.log
+PS C:\Work\Tools\10\Debloat-Windows-10-master\scripts>

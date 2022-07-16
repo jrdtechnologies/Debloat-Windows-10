@@ -60,15 +60,15 @@ $domains = @(
     "c.atdmt.com"
     "cdn.atdmt.com"
     "cds26.ams9.msecn.net"
-    "choice.microsoft.com"
-    "choice.microsoft.com.nsatc.net"
+    #"choice.microsoft.com"
+    #"choice.microsoft.com.nsatc.net"
     "compatexchange.cloudapp.net"
     "corpext.msitadfs.glbdns2.microsoft.com"
-    "corp.sts.microsoft.com"
+    #"corp.sts.microsoft.com"
     "cs1.wpc.v0cdn.net"
     "db3aqu.atdmt.com"
     "df.telemetry.microsoft.com"
-    "diagnostics.support.microsoft.com"
+    #"diagnostics.support.microsoft.com"
     "e2835.dspb.akamaiedge.net"
     "e7341.g.akamaiedge.net"
     "e7502.ce.akamaiedge.net"
@@ -189,12 +189,12 @@ $domains = @(
     "m.hotmail.com"
 
     # can cause issues with Skype (#79) or other services (#171)
-    "apps.skype.com"
-    "c.msn.com"
+    #"apps.skype.com"
+    #"c.msn.com"
     # "login.live.com"                  # prevents login to outlook and other live apps
-    "pricelist.skype.com"
-    "s.gateway.messenger.live.com"
-    "ui.skype.com"
+    #"pricelist.skype.com"
+    #"s.gateway.messenger.live.com"
+    #"ui.skype.com"
 )
 Write-Output "" | Out-File -Encoding ASCII -Append $hosts_file
 foreach ($domain in $domains) {
@@ -215,7 +215,7 @@ $ips = @(
     "204.79.197.200"
     "23.218.212.69"
     "65.39.117.230"
-    "65.52.108.33"   # Causes problems with Microsoft Store
+    #"65.52.108.33"   # Causes problems with Microsoft Store
     "65.55.108.23"
     "64.4.54.254"
 
